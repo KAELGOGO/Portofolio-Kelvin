@@ -73,7 +73,7 @@ const lifePathData = [
   },
   {
     year: "2025-2026",
-    title: "Fresman Partner B29",
+    title: "Freshmen Partner B29",
     place: "Universitas Bina Nusantara",
     desc: "Mengasah empati dan kemampuan komunikasi interpersonal secara mendalam melalui pengalaman membimbing mahasiswa baru selama satu tahun penuh.",
     icon: <Briefcase size={20} />,
@@ -82,7 +82,7 @@ const lifePathData = [
   },
   {
     year: "2025",
-    title: "Fresman Leader B29",
+    title: "Freshmen Leader B29",
     place: "Universitas Bina Nusantara",
     desc: "Menumbuhkan kepercayaan diri dan skill public speaking dengan berpartisipasi pada masa orientasi mahasiswa baru serta memperluas jaringan relasi kampus.",
     icon: <Briefcase size={20} />,
