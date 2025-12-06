@@ -43,6 +43,8 @@ import imgUnivPeng2 from "./assets/LifePath/fp moment.jpeg";
 import imgUniv from "./assets/LifePath/gestitalkmoment.jpeg";
 import imgSma from "./assets/LifePath/sma.jpeg";
 
+import laguSaya from "./assets/cascade-breathe-future-garage-412839.mp3";
+
 const bgImages = [
   bg1,
   bg2,
@@ -116,7 +118,24 @@ const achievementData = [
     image: prestasi1,
     color: "bg-blue-100 text-blue-700",
   },
-  
+  {
+    id: 2,
+    title: "Certified React Developer",
+    event: "Dicoding Indonesia",
+    desc: "Lulus kelas expert dengan rating bintang 5.",
+    image:
+      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop",
+    color: "bg-cyan-100 text-cyan-600",
+  },
+  {
+    id: 3,
+    title: "Top 10 Hackathon",
+    event: "Google DSC",
+    desc: "Membangun solusi smart city berbasis IoT dalam 24 jam.",
+    image:
+      "https://images.unsplash.com/photo-1504384308090-c54be3855833?q=80&w=2062&auto=format&fit=crop",
+    color: "bg-purple-100 text-purple-600",
+  },
 ];
 
 // --- CUSTOM HOOK: TYPEWRITER EFFECT ---
@@ -152,8 +171,7 @@ const MusicPlayer = () => {
   const audioRef = useRef(null);
 
   // Link Lagu Pixabay (Direct MP3)
-  const audioSrc =
-    "https://cdn.pixabay.com/audio/2023/07/04/audio_3d16812832.mp3";
+  const audioSrc = laguSaya;
 
   // Link Halaman Lagu (Untuk icon di kanan)
   const trackLink = "https://pixabay.com/music/funk-running-night-393139/";
@@ -256,9 +274,9 @@ const MusicPlayer = () => {
           </div>
           <div className="text-left overflow-hidden">
             <h3 className="text-xs font-bold leading-tight truncate w-32">
-              Running Night
+              Cascade Breathe (Future Garage)
             </h3>
-            <p className="text-[10px] text-gray-500">Funk / Groove</p>
+            <p className="text-[10px] text-gray-500">NverAvetyanMusic</p>
           </div>
         </div>
 
