@@ -118,24 +118,7 @@ const achievementData = [
     image: prestasi1,
     color: "bg-blue-100 text-blue-700",
   },
-  {
-    id: 2,
-    title: "Certified React Developer",
-    event: "Dicoding Indonesia",
-    desc: "Lulus kelas expert dengan rating bintang 5.",
-    image:
-      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop",
-    color: "bg-cyan-100 text-cyan-600",
-  },
-  {
-    id: 3,
-    title: "Top 10 Hackathon",
-    event: "Google DSC",
-    desc: "Membangun solusi smart city berbasis IoT dalam 24 jam.",
-    image:
-      "https://images.unsplash.com/photo-1504384308090-c54be3855833?q=80&w=2062&auto=format&fit=crop",
-    color: "bg-purple-100 text-purple-600",
-  },
+  
 ];
 
 // --- CUSTOM HOOK: TYPEWRITER EFFECT ---
