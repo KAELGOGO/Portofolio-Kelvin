@@ -1,0 +1,164 @@
+
+import fotoProfil from "./assets/profile.jpeg";
+import bg1 from "./assets/bg/teman.jpeg";
+import bg2 from "./assets/bg/helpmate bimble.jpeg";
+import bg3 from "./assets/bg/gestitalkmoment.jpeg";
+import bg4 from "./assets/bg/fp moment.jpeg";
+import bg5 from "./assets/bg/fl moment2.jpeg";
+import bg6 from "./assets/bg/fl moment3.jpeg";
+import bg7 from "./assets/bg/fl moment4.jpeg";
+import bg8 from "./assets/bg/fl moment5.jpeg";
+import bg9 from "./assets/bg/fl moment 6.jpeg";
+import bg10 from "./assets/bg/fl moment7.jpeg";
+import bg11 from "./assets/bg/fl moment8.jpeg";
+import bg12 from "./assets/bg/fl moment9.jpeg";
+
+import prestasi1 from "./assets/prestasi/samsung-sft2025.jpeg";
+
+import imgWork1 from "./assets/LifePath/helpmate bimble.jpeg";
+import imgUnivPeng1 from "./assets/LifePath/fl moment2.jpeg";
+import imgUnivPeng2 from "./assets/LifePath/fp moment.jpeg";
+import imgUniv from "./assets/LifePath/gestitalkmoment.jpeg";
+import imgSma from "./assets/LifePath/sma.jpeg";
+
+const bgImages = [
+  bg1,
+  bg2,
+  bg3,
+  bg4,
+  bg5,
+  bg6,
+  bg7,
+  bg8,
+  bg9,
+  bg10,
+  bg11,
+  bg12,
+];
+
+
+// --- DATA LIFE PATH ---
+const lifePathData = [
+  {
+    year: "2025 - Sekarang",
+    title: "Partime Tutor",
+    place: "HelpMate Bimble",
+    desc: "Menjadi tutor MTK,IPA untuk anak SMP membantu mengembangkan soft-skill dan empati.",
+    icon: <Briefcase size={20} />,
+    color: "bg-blue-100 text-blue-600",
+    image: imgWork1,
+  },
+  {
+    year: "2025-2026",
+    title: "Fresman Partner B29",
+    place: "Universitas Bina Nusantara",
+    desc: "Mengasah empati dan kemampuan komunikasi interpersonal secara mendalam melalui pengalaman membimbing mahasiswa baru selama satu tahun penuh.",
+    icon: <Briefcase size={20} />,
+    color: "bg-blue-100 text-blue-600",
+    image: imgUnivPeng2,
+  },
+  {
+    year: "2025",
+    title: "Fresman Leader B29",
+    place: "Universitas Bina Nusantara",
+    desc: "Menumbuhkan kepercayaan diri dan skill public speaking dengan berpartisipasi pada masa orientasi mahasiswa baru serta memperluas jaringan relasi kampus.",
+    icon: <Briefcase size={20} />,
+    color: "bg-blue-100 text-blue-600",
+    image: imgUnivPeng1,
+  },
+  {
+    year: "2024 - Sekarang",
+    title: "Kuliah",
+    place: "Universitas Bina Nusantara",
+    desc: "Mengambil jurusan Computer Science untuk mendalami bidang IT dan berhasil memenangkan beberapa lomba.",
+    icon: <GraduationCap size={20} />,
+    color: "bg-blue-100 text-blue-600",
+    image: imgUniv,
+  },
+  {
+    year: "2021 - 2024",
+    title: "SMA",
+    place: "SMK Negeri 1 Manggar, Belitung Timur",
+    desc: "Mulai mengenal coding dan algoritma dasar dari OSN Informatika hingga tingkat provinsi.",
+    icon: <BookOpen size={20} />,
+    color: "bg-purple-100 text-purple-600",
+    image: imgSma,
+  },
+];
+
+const achievementData = [
+  {
+    id: 1,
+    title: "Juara 3 Samsung Solve For Tomorrow 2025",
+    event: "Samsung Solve For Tomorrow 2025",
+    desc: "Mengembangkan inovasi 'GestiTalk', aplikasi penerjemah bahasa isyarat berbasis AI.",
+    image: prestasi1,
+    color: "bg-blue-100 text-blue-700",
+  },
+  {
+    id: 2,
+    title: "Certified React Developer",
+    event: "Dicoding Indonesia",
+    desc: "Lulus kelas expert dengan rating bintang 5.",
+    image:
+      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop",
+    color: "bg-cyan-100 text-cyan-600",
+  },
+  {
+    id: 3,
+    title: "Top 10 Hackathon",
+    event: "Google DSC",
+    desc: "Membangun solusi smart city berbasis IoT dalam 24 jam.",
+    image:
+      "https://images.unsplash.com/photo-1504384308090-c54be3855833?q=80&w=2062&auto=format&fit=crop",
+    color: "bg-purple-100 text-purple-600",
+  },
+];
+
+ {[
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React JS",
+            "Tailwind",
+            "Java",
+            "C++",
+            "Python",
+            "Git/GitHub",
+          ].map((skill, index) => (
+            <motion.div
+              key={skill}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ scale: 1.05 }}
+              className="p-4 bg-white/60 backdrop-blur-sm border border-white/40 rounded-xl text-center font-bold text-gray-700 shadow-sm hover:bg-white hover:text-blue-600 hover:shadow-md cursor-default transition-all"
+            >
+              {skill}
+            </motion.div>
+          ))}
+
+<a
+                href="https://www.instagram.com/ka_el_jee?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-full bg-white/50 hover:bg-white text-gray-500 hover:text-pink-600 transition-all shadow-sm hover:scale-110 hover:shadow-md"
+              >
+                <Instagram size={18} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/kelvin-leandi-9529772a7/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-full bg-white/50 hover:bg-white text-gray-500 hover:text-blue-700 transition-all shadow-sm hover:scale-110 hover:shadow-md"
+              >
+                <Linkedin size={18} />
+              </a>
+              <a
+                href="https://github.com/KAELGOGO"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-full bg-white/50 hover:bg-white text-gray-500 hover:text-black transition-all shadow-sm hover:scale-110 hover:shadow-md"
+              >
+                <Github size={18} />
+              </a>
