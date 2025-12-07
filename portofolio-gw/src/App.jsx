@@ -36,6 +36,7 @@ import bg11 from "./assets/bg/fl moment8.jpeg";
 import bg12 from "./assets/bg/fl moment9.jpeg";
 
 import prestasi1 from "./assets/prestasi/samsung-sft2025.jpeg";
+import prestasi2 from "./assets/prestasi/samsung-sft2025.jpeg";
 
 import imgWork1 from "./assets/LifePath/helpmate bimble.jpeg";
 import imgUnivPeng1 from "./assets/LifePath/fl moment2.jpeg";
@@ -116,6 +117,14 @@ const achievementData = [
     event: "Samsung Solve For Tomorrow 2025",
     desc: "Mengembangkan inovasi 'GestiTalk', aplikasi penerjemah bahasa isyarat berbasis AI.",
     image: prestasi1,
+    color: "bg-blue-100 text-blue-700",
+  },
+  {
+    id: 2,
+    title: "Peserta Stage 4 Samsung Innovation Campus Batch 6",
+    event: "Samsung Innovation Campus Batch 6",
+    desc: "Mengembangkan inovasi 'GestiTalk', alat penerjemah alfabet bahasa isyarat berbasis AI diintegrasikan dengan IOT.",
+    image: prestasi2,
     color: "bg-blue-100 text-blue-700",
   },
   
