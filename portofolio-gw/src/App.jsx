@@ -101,7 +101,7 @@ const lifePathData = [
   {
     year: "2021 - 2024",
     title: "SMA",
-    place: "SMK Negeri 1 Manggar, Belitung Timur",
+    place: "SMA Negeri 1 Manggar, Belitung Timur",
     desc: "Mulai mengenal coding dan algoritma dasar dari OSN Informatika hingga tingkat provinsi.",
     icon: <BookOpen size={20} />,
     color: "bg-purple-100 text-purple-600",
