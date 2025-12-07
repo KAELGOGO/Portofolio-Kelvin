@@ -460,7 +460,7 @@ const LifePathTimeline = () => {
   return (
     <div className="h-full w-full overflow-y-auto pr-2 custom-scrollbar relative">
       <h2 className="text-3xl font-bold mb-8 text-gray-900 pt-2">
-        Perjalanan Hidup
+        Perjalanan
       </h2>
 
       <div className="relative border-l-2 border-gray-300 ml-3 md:ml-4 space-y-8 pb-10">
@@ -756,8 +756,8 @@ const tabs = [
     content: <BioContent />,
   },
   {
-    id: "lifepath",
-    label: "Path",
+    id: "path",
+    label: "Journey",
     icon: <History size={20} />,
     content: <LifePathTimeline />,
   },
