@@ -658,114 +658,138 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center font-sans text-gray-800 p-0 md:p-4 overflow-hidden">
-      {/* === BACKGROUND SLIDESHOW === */}
-      <div className="absolute inset-0 z-0">
+    // CONTAINER UTAMA
+    <div className="relative min-h-screen md:h-screen flex items-start md:items-center justify-center font-sans text-gray-800 p-0 md:p-4 overflow-hidden bg-gray-900">
+      <div className="fixed inset-0 z-0">
         <AnimatePresence mode="popLayout">
           {bgImages.length > 0 && (
             <motion.img
               key={bgIndex}
               src={bgImages[bgIndex]}
-              initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1.5 }}
-              className="absolute inset-0 w-full h-full object-cover blur-md brightness-[0.5]"
+              className="absolute inset-0 w-full h-full object-cover blur-md brightness-[0.4]"
             />
           )}
         </AnimatePresence>
-        <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
-      {/* === MAIN CONTAINER === */}
-      <div className="relative z-10 w-full h-screen md:w-[900px] md:h-[550px] bg-white/85 backdrop-blur-xl md:rounded-[2.5rem] shadow-2xl flex flex-col md:flex-row overflow-hidden border border-white/20 ring-1 ring-black/5">
-        {/* --- Sidebar (Kiri) --- */}
-        <nav className="w-full md:w-72 bg-white/40 border-b md:border-b-0 md:border-r border-gray-200/50 flex md:flex-col justify-between p-6 z-20 backdrop-blur-md">
-          {/* Logo */}
-          <div className="flex items-center gap-2 mb-0 md:mb-10">
+      {/* CARD UTAMA */}
+      <div className="relative z-10 w-full min-h-screen md:min-h-0 md:h-[600px] md:w-[950px] bg-white/90 md:bg-white/85 backdrop-blur-xl md:rounded-[2.5rem] shadow-2xl flex flex-col md:flex-row overflow-hidden border-none md:border border-white/20">
+        {/* --- DESKTOP SIDEBAR --- */}
+        <nav className="hidden md:flex w-72 bg-white/40 border-r border-gray-200/50 flex-col justify-between p-8 z-20 backdrop-blur-md">
+          <div className="flex items-center gap-2">
             <div className="w-3 h-3 bg-blue-600 rounded-full animate-pulse"></div>
             <div className="font-black text-2xl tracking-tighter text-gray-900">
               KELVIN.
             </div>
           </div>
-
-          {/* Menu Tabs */}
-          <div className="flex md:flex-col gap-2 md:gap-3 overflow-x-auto md:overflow-visible no-scrollbar ml-4 md:ml-0">
+          <div className="flex flex-col gap-3">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-3 px-5 py-3 rounded-2xl transition-all duration-300 whitespace-nowrap ${
+                className={`flex items-center gap-3 px-5 py-3 rounded-2xl transition-all duration-300 text-left ${
                   activeTab === tab.id
-                    ? "bg-black/90 text-white shadow-lg shadow-gray-400/50 scale-105"
-                    : "text-gray-600 hover:bg-white/60 hover:text-black hover:shadow-sm"
+                    ? "bg-black/90 text-white shadow-lg scale-105"
+                    : "text-gray-600 hover:bg-white/60 hover:text-black"
                 }`}
               >
-                <span
-                  className={
-                    activeTab === tab.id ? "text-white" : "text-gray-500"
-                  }
-                >
-                  {tab.icon}
-                </span>
-                <span className="font-bold text-sm tracking-wide">
-                  {tab.label}
-                </span>
+                <span>{tab.icon}</span>
+                <span className="font-bold text-sm">{tab.label}</span>
               </button>
             ))}
           </div>
-
-          {/* --- SOCIAL MEDIA (BARU) --- */}
-          <div className="hidden md:flex flex-col gap-4 mt-auto">
-            {/* Icons Row */}
-            <div className="flex gap-3">
-              <a
-                href="https://www.instagram.com/ka_el_jee?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-white/50 hover:bg-white text-gray-500 hover:text-pink-600 transition-all shadow-sm hover:scale-110 hover:shadow-md"
-              >
-                <Instagram size={18} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/kelvin-leandi-9529772a7/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-white/50 hover:bg-white text-gray-500 hover:text-blue-700 transition-all shadow-sm hover:scale-110 hover:shadow-md"
-              >
-                <Linkedin size={18} />
-              </a>
-              <a
-                href="https://github.com/KAELGOGO"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-white/50 hover:bg-white text-gray-500 hover:text-black transition-all shadow-sm hover:scale-110 hover:shadow-md"
-              >
-                <Github size={18} />
-              </a>
-            </div>
-            {/* Copyright */}
-            <div className="text-[10px] text-gray-400 font-medium uppercase tracking-widest pl-1">
-              © 2025 Kelvin
-            </div>
+          <div className="flex gap-3 mt-auto">
+            <a
+              href="https://www.instagram.com/ka_el_jee"
+              target="_blank"
+              className="p-2 rounded-full bg-white/50 hover:bg-white hover:text-pink-600 transition"
+            >
+              <Instagram size={18} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/kelvin-leandi-9529772a7/"
+              target="_blank"
+              className="p-2 rounded-full bg-white/50 hover:bg-white hover:text-blue-700 transition"
+            >
+              <Linkedin size={18} />
+            </a>
+            <a
+              href="https://github.com/KAELGOGO"
+              target="_blank"
+              className="p-2 rounded-full bg-white/50 hover:bg-white hover:text-black transition"
+            >
+              <Github size={18} />
+            </a>
           </div>
         </nav>
 
-        {/* --- Main Content (Kanan) --- */}
-        <main className="flex-1 relative bg-transparent p-6 md:p-12 overflow-hidden flex flex-col">
+        {/* --- MOBILE TOP HEADER --- */}
+        <div className="md:hidden fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md z-30 px-6 py-4 flex justify-between items-center border-b border-gray-200/50 shadow-sm">
+          <div className="font-black text-xl tracking-tighter text-gray-900 flex items-center gap-2">
+            <div className="w-2 h-2 bg-blue-600 rounded-full"></div> KELVIN.
+          </div>
+          <div className="flex gap-3">
+            <a
+              href="https://www.instagram.com/ka_el_jee"
+              target="_blank"
+              className="text-gray-500 hover:text-pink-600 transition"
+            >
+              <Instagram size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/kelvin-leandi-9529772a7/"
+              target="_blank"
+              className="text-gray-500 hover:text-blue-700 transition"
+            >
+              <Linkedin size={20} />
+            </a>
+            <a
+              href="https://github.com/KAELGOGO"
+              target="_blank"
+              className="text-gray-500 hover:text-black transition"
+            >
+              <Github size={20} />
+            </a>
+          </div>
+        </div>
+
+        {/* --- MAIN CONTENT AREA --- */}
+        <main className="flex-1 relative bg-transparent p-6 pt-24 pb-24 md:p-12 md:pt-12 md:pb-12 overflow-hidden flex flex-col h-full">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
-              initial={{ opacity: 0, x: 50, scale: 0.98 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              exit={{ opacity: 0, x: -50, scale: 0.98 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
               className="h-full w-full"
             >
               {activeContent.content}
             </motion.div>
           </AnimatePresence>
         </main>
+
+        {/* --- MOBILE BOTTOM NAVIGATION --- */}
+        <div className="md:hidden fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-xl border-t border-gray-200 z-50 flex justify-around items-center py-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex flex-col items-center justify-center p-2 rounded-xl transition-all duration-300 w-full ${
+                activeTab === tab.id
+                  ? "text-blue-600 scale-105 font-bold"
+                  : "text-gray-400 hover:text-gray-600"
+              }`}
+            >
+              {tab.icon}
+              <span className="text-[10px] mt-1">{tab.label}</span>
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
