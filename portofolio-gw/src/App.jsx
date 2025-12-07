@@ -19,6 +19,8 @@ import {
   Volume2,
   Music,
   Zap,
+  FolderGit2, // Icon untuk Menu Project
+  ExternalLink, // Icon untuk link project
 } from "lucide-react";
 
 import fotoProfil from "./assets/profile.jpeg";
@@ -46,6 +48,11 @@ import imgSma from "./assets/LifePath/sma.jpeg";
 
 import laguSaya from "./assets/cascade-breathe-future-garage-412839.mp3";
 
+import project1 from "./assets/project/GistiTalk.jpeg";
+import project2 from "./assets/project/portofolio.jpeg";
+import project3 from "./assets/project/Tubris.jpg";
+import project4 from "./assets/project/GistiTalkIOT.jpeg";
+
 const bgImages = [
   bg1,
   bg2,
@@ -59,6 +66,96 @@ const bgImages = [
   bg10,
   bg11,
   bg12,
+];
+
+// --- DATA SKILLS  ---
+const skillsData = [
+  {
+    name: "HTML5",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  },
+  {
+    name: "CSS3",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  },
+  {
+    name: "JavaScript",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  },
+  {
+    name: "React JS",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  },
+  {
+    name: "Tailwind",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+  },
+  {
+    name: "Java",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+  },
+  {
+    name: "Python",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  },
+  {
+    name: "C++",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+  },
+  // --- TAMBAHAN BARU ---
+  {
+    name: "C",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+  },
+  {
+    name: "Arduino",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg",
+  },
+  // ---------------------
+  {
+    name: "Git",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  },
+];
+
+// --- DATA PROJECT  ---
+const projectData = [
+  {
+    id: 1,
+    title: "GestiTalk App",
+    category: "AI & Mobile Dev",
+    image: project1,
+    desc: "Aplikasi penerjemah bahasa isyarat berbasis AI untuk membantu komunikasi teman Tuli.",
+    tech: ["Python", "HTML,CSS,JS", "Git-Hub,Vercel", "HuggingFace"],
+    link: "https://gisti-talk-sft-2025.vercel.app/",
+  },
+  {
+    id: 2,
+    title: "Portofolio",
+    category: "Web Development",
+    image: project2,
+    desc: "Website portofolio pribadi",
+    tech: ["React JS", "Tailwind", "Git-Hub,Vercel"],
+    link: "https://kelvin-leandi.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "TUBRIS",
+    category: "AI & Mobile Dev",
+    image: project3,
+    desc: "Aplikasi pendeteksi penyakit TBC berbasis AI dengan foto X-RAY untuk membantu dokter mendiagnosis awal.",
+    tech: ["Python", "HTML,CSS,JS", "Git-Hub,Vercel", "HuggingFace"],
+    link: "http://tubris.vercel.app/",
+  },
+  {
+    id: 4,
+    title: "GistiTalk IOT",
+    category: "AI & IOT",
+    image: project4,
+    desc: "Device penerjemah alfabet bahasa isyarat berbasis AI yang diintegrasikan dengan IOT.",
+    tech: ["Python", "Arduino"],
+    link: "#",
+  },
 ];
 
 // --- DATA LIFE PATH ---
@@ -127,7 +224,6 @@ const achievementData = [
     image: prestasi2,
     color: "bg-blue-100 text-blue-700",
   },
-  
 ];
 
 const useTypewriter = (text, speed = 100) => {
@@ -163,7 +259,8 @@ const MusicPlayer = () => {
 
   const audioSrc = laguSaya;
 
-  const trackLink = "https://pixabay.com/music/funk-running-night-393139/";
+  const trackLink =
+    "https://pixabay.com/music/beats-cascade-breathe-future-garage-412839/";
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -410,6 +507,71 @@ const LifePathTimeline = () => {
   );
 };
 
+// --- KOMPONEN PROJECT ---
+const ProjectsContent = () => {
+  return (
+    <div className="h-full w-full overflow-y-auto pr-2 custom-scrollbar pb-24 md:pb-0">
+      {/* --- BAGIAN INI YANG DIPERBAIKI --- */}
+      {/* Disamakan dengan LifePath: Hapus 'sticky', 'bg-white', ubah text size jadi fix 'text-3xl' */}
+      <h2 className="text-3xl font-bold mb-8 text-gray-900 pt-2">
+        My Projects
+      </h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-10">
+        {projectData.map((project, index) => (
+          <motion.div
+            key={project.id}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.2 }}
+            className="bg-white/60 backdrop-blur-sm border border-white/40 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+          >
+            {/* ... (Isi card tetap sama) ... */}
+            <div className="h-40 overflow-hidden relative">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-between p-4">
+                <span className="text-white text-xs font-bold bg-blue-600/80 px-2 py-1 rounded-md backdrop-blur-md">
+                  {project.category}
+                </span>
+              </div>
+            </div>
+            <div className="p-5">
+              <div className="flex justify-between items-start mb-2">
+                <h3 className="text-lg font-bold text-gray-900 leading-tight">
+                  {project.title}
+                </h3>
+                <a
+                  href={project.link}
+                  className="text-gray-400 hover:text-blue-600"
+                >
+                  <ExternalLink size={18} />
+                </a>
+              </div>
+              <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                {project.desc}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map((t, i) => (
+                  <span
+                    key={i}
+                    className="text-[10px] font-semibold text-gray-500 bg-gray-100 px-2 py-1 rounded-full border border-gray-200"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 // --- KOMPONEN CAROUSEL PRESTASI ---
 const AchievementsCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -571,7 +733,7 @@ const BioContent = () => {
         {/* --- TOMBOL DOWNLOAD CV (BARU) --- */}
         <div className="flex justify-center md:justify-start">
           <a
-            href="/Kelvin-Leandi-CV.pdf" 
+            href="/Kelvin-Leandi-CV.pdf"
             download="Kelvin Leandi CV.pdf"
             className="group relative px-6 py-3 bg-gray-900 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-gray-800 transition-all active:scale-95 flex items-center gap-2 overflow-hidden"
           >
@@ -586,51 +748,57 @@ const BioContent = () => {
   );
 };
 
-// --- TABS UTAMA ---
 const tabs = [
   {
     id: "bio",
-    label: "Biografi",
-    icon: <User size={18} />,
+    label: "Bio",
+    icon: <User size={20} />,
     content: <BioContent />,
   },
   {
     id: "lifepath",
-    label: "Life Path",
-    icon: <History size={18} />,
+    label: "Path",
+    icon: <History size={20} />,
     content: <LifePathTimeline />,
+  },
+  {
+    id: "projects",
+    label: "Project",
+    icon: <FolderGit2 size={20} />,
+    content: <ProjectsContent />,
   },
   {
     id: "skills",
     label: "Skills",
-    icon: <Code size={18} />,
+    icon: <Code size={20} />,
     content: (
-      <div className="h-full flex flex-col justify-center max-w-2xl mx-auto">
-        <h2 className="text-3xl font-bold mb-2 text-gray-900">Tech Stack</h2>
-        <p className="text-gray-600 mb-8 text-sm font-medium">
+      <div className="h-full flex flex-col justify-center max-w-3xl mx-auto pb-24 md:pb-0">
+        <h2 className="text-2xl md:text-3xl font-bold mb-2 text-gray-900 text-center">
+          Tech Stack
+        </h2>
+        <p className="text-gray-600 mb-8 text-sm text-center">
           Alat tempur yang saya gunakan sehari-hari.
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {[
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "React JS",
-            "Tailwind",
-            "Java",
-            "C++",
-            "Python",
-            "Git/GitHub",
-          ].map((skill, index) => (
+
+        {/* --- GRID LOGO SKILLS --- */}
+        <div className="grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
+          {skillsData.map((skill, index) => (
             <motion.div
-              key={skill}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              key={index}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.05 }}
-              className="p-4 bg-white/60 backdrop-blur-sm border border-white/40 rounded-xl text-center font-bold text-gray-700 shadow-sm hover:bg-white hover:text-blue-600 hover:shadow-md cursor-default transition-all"
+              whileHover={{ scale: 1.1 }}
+              className="flex flex-col items-center justify-center p-4 bg-white/60 backdrop-blur-sm border border-white/40 rounded-2xl shadow-sm hover:shadow-lg transition-all cursor-pointer group"
             >
-              {skill}
+              <img
+                src={skill.icon}
+                alt={skill.name}
+                className="w-10 h-10 md:w-12 md:h-12 mb-2 drop-shadow-sm group-hover:drop-shadow-md transition-all"
+              />
+              <span className="text-[10px] md:text-xs font-bold text-gray-600 group-hover:text-blue-600">
+                {skill.name}
+              </span>
             </motion.div>
           ))}
         </div>
@@ -640,7 +808,7 @@ const tabs = [
   {
     id: "achievements",
     label: "Prestasi",
-    icon: <Trophy size={18} />,
+    icon: <Trophy size={20} />,
     content: <AchievementsCarousel />,
   },
 ];
@@ -660,6 +828,7 @@ export default function App() {
   return (
     // CONTAINER UTAMA
     <div className="relative min-h-screen md:h-screen flex items-start md:items-center justify-center font-sans text-gray-800 p-0 md:p-4 overflow-hidden bg-gray-900">
+      {/* BACKGROUND */}
       <div className="fixed inset-0 z-0">
         <AnimatePresence mode="popLayout">
           {bgImages.length > 0 && (
@@ -678,7 +847,7 @@ export default function App() {
 
       {/* CARD UTAMA */}
       <div className="relative z-10 w-full min-h-screen md:min-h-0 md:h-[600px] md:w-[950px] bg-white/90 md:bg-white/85 backdrop-blur-xl md:rounded-[2.5rem] shadow-2xl flex flex-col md:flex-row overflow-hidden border-none md:border border-white/20">
-        {/* --- DESKTOP SIDEBAR --- */}
+        {/* --- DESKTOP SIDEBAR (Hidden on Mobile) --- */}
         <nav className="hidden md:flex w-72 bg-white/40 border-r border-gray-200/50 flex-col justify-between p-8 z-20 backdrop-blur-md">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 bg-blue-600 rounded-full animate-pulse"></div>
@@ -727,7 +896,7 @@ export default function App() {
           </div>
         </nav>
 
-        {/* --- MOBILE TOP HEADER --- */}
+        {/* --- MOBILE TOP HEADER (FIXED di ATAS) --- */}
         <div className="md:hidden fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md z-30 px-6 py-4 flex justify-between items-center border-b border-gray-200/50 shadow-sm">
           <div className="font-black text-xl tracking-tighter text-gray-900 flex items-center gap-2">
             <div className="w-2 h-2 bg-blue-600 rounded-full"></div> KELVIN.
@@ -758,6 +927,7 @@ export default function App() {
         </div>
 
         {/* --- MAIN CONTENT AREA --- */}
+        {/* Padding atas 24 (96px) biar gak ketutup Header, Padding bawah 24 (96px) biar gak ketutup Navigasi */}
         <main className="flex-1 relative bg-transparent p-6 pt-24 pb-24 md:p-12 md:pt-12 md:pb-12 overflow-hidden flex flex-col h-full">
           <AnimatePresence mode="wait">
             <motion.div
@@ -773,7 +943,7 @@ export default function App() {
           </AnimatePresence>
         </main>
 
-        {/* --- MOBILE BOTTOM NAVIGATION --- */}
+        {/* --- MOBILE BOTTOM NAVIGATION (FIXED di BAWAH) --- */}
         <div className="md:hidden fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-xl border-t border-gray-200 z-50 flex justify-around items-center py-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
           {tabs.map((tab) => (
             <button
