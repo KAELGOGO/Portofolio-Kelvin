@@ -36,7 +36,7 @@ import bg11 from "./assets/bg/fl moment8.jpeg";
 import bg12 from "./assets/bg/fl moment9.jpeg";
 
 import prestasi1 from "./assets/prestasi/samsung-sft2025.jpeg";
-import prestasi2 from "./assets/prestasi/samsung-sft2025.jpeg";
+import prestasi2 from "./assets/prestasi/Samsung-SIC25.jpeg";
 
 import imgWork1 from "./assets/LifePath/helpmate bimble.jpeg";
 import imgUnivPeng1 from "./assets/LifePath/fl moment2.jpeg";
