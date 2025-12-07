@@ -121,7 +121,6 @@ const achievementData = [
   
 ];
 
-// --- CUSTOM HOOK: TYPEWRITER EFFECT ---
 const useTypewriter = (text, speed = 100) => {
   const [displayText, setDisplayText] = useState("");
 
@@ -153,10 +152,8 @@ const MusicPlayer = () => {
 
   const audioRef = useRef(null);
 
-  // Link Lagu Pixabay (Direct MP3)
   const audioSrc = laguSaya;
 
-  // Link Halaman Lagu (Untuk icon di kanan)
   const trackLink = "https://pixabay.com/music/funk-running-night-393139/";
 
   useEffect(() => {
@@ -502,7 +499,6 @@ const AchievementsCarousel = () => {
 // --- KOMPONEN KONTEN BIOGRAFI BARU (DENGAN TYPEWRITER & DOWNLOAD CV) ---
 const BioContent = () => {
   const [greeting, setGreeting] = useState("Halo");
-  // Custom Hook dipanggil di sini
   const typedName = useTypewriter(" Kelvin L.", 150);
   const typedDesc = useTypewriter(
     " Seorang manusia yang belajar dan bekerja untuk menikmati hidup.",
@@ -566,7 +562,7 @@ const BioContent = () => {
         {/* --- TOMBOL DOWNLOAD CV (BARU) --- */}
         <div className="flex justify-center md:justify-start">
           <a
-            href="/path-to-your-cv.pdf" // Ganti dengan link file CV kamu (misal di folder public)
+            href="/path-to-your-cv.pdf" 
             download="CV_Kelvin.pdf"
             className="group relative px-6 py-3 bg-gray-900 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-gray-800 transition-all active:scale-95 flex items-center gap-2 overflow-hidden"
           >
@@ -587,7 +583,7 @@ const tabs = [
     id: "bio",
     label: "Biografi",
     icon: <User size={18} />,
-    content: <BioContent />, // Memanggil Komponen BioContent Baru
+    content: <BioContent />,
   },
   {
     id: "lifepath",
