@@ -571,8 +571,8 @@ const BioContent = () => {
         {/* --- TOMBOL DOWNLOAD CV (BARU) --- */}
         <div className="flex justify-center md:justify-start">
           <a
-            href="/path-to-your-cv.pdf" 
-            download="/Kelvin Leandi CV.pdf"
+            href="/Kelvin-Leandi-CV.pdf" 
+            download="Kelvin Leandi CV.pdf"
             className="group relative px-6 py-3 bg-gray-900 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-gray-800 transition-all active:scale-95 flex items-center gap-2 overflow-hidden"
           >
             <span className="relative z-10 flex items-center gap-2">
