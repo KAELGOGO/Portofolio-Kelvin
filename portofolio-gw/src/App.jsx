@@ -82,42 +82,42 @@ const bgImages = [
   bg19
 ];
 
-// --- DATA SKILLS (UPDATED PROFESSIONAL LOOK) ---
+// --- DATA SKILLS (Tanpa Persentase, Diganti Label) ---
 const groupedSkills = [
   {
     category: "Core Programming & IoT",
     icon: <Zap size={18} />,
     skills: [
-      { name: "Python", desc: "Data processing & AI Models (HuggingFace)", level: 85 },
-      { name: "C / C++", desc: "Algorithm structure & Logic building", level: 80 },
-      { name: "Java", desc: "Object-Oriented Programming (OOP)", level: 75 },
-      { name: "Arduino", desc: "Microcontroller & IoT integration", level: 70 },
+      { name: "Python", desc: "Data processing & AI Models (HuggingFace)", level: "Proficient" },
+      { name: "C / C++", desc: "Algorithm structure & Logic building", level: "Intermediate" },
+      { name: "Java", desc: "Object-Oriented Programming (OOP)", level: "Intermediate" },
+      { name: "Arduino", desc: "Microcontroller & IoT integration", level: "Familiar" },
     ],
   },
   {
     category: "Web Development",
     icon: <Code size={18} />,
     skills: [
-      { name: "React JS", desc: "Component-based UI development", level: 85 },
-      { name: "Tailwind CSS", desc: "Utility-first responsive styling", level: 90 },
-      { name: "HTML5 / CSS3", desc: "Fundamental web structure & design", level: 90 },
-      { name: "JavaScript", desc: "Dynamic web interaction", level: 85 },
+      { name: "React JS", desc: "Component-based UI development", level: "Proficient" },
+      { name: "Tailwind CSS", desc: "Utility-first responsive styling", level: "Proficient" },
+      { name: "HTML5 / CSS3", desc: "Fundamental web structure & design", level: "Advanced" },
+      { name: "JavaScript", desc: "Dynamic web interaction", level: "Proficient" },
     ],
   },
   {
     category: "Communication & Leadership",
     icon: <User size={18} />,
     skills: [
-      { name: "Public Speaking & MC", desc: "Hosting formal/informal organizational events", level: 90 },
-      { name: "Tutoring & Mentoring", desc: "Academic mentoring & empathy building", level: 85 },
-      { name: "Adaptability", desc: "Fast learner in cross-functional environments", level: 95 },
+      { name: "Public Speaking & MC", desc: "Hosting formal/informal organizational events", level: "Advanced" },
+      { name: "Tutoring & Mentoring", desc: "Academic mentoring & empathy building", level: "Advanced" },
+      { name: "Adaptability", desc: "Fast learner in cross-functional environments", level: "Advanced" },
     ],
   },
   {
     category: "Tools & Version Control",
     icon: <FolderGit2 size={18} />,
     skills: [
-      { name: "Git & GitHub", desc: "Code versioning & team collaboration", level: 80 },
+      { name: "Git & GitHub", desc: "Code versioning & team collaboration", level: "Proficient" },
     ],
   },
 ];
@@ -808,35 +808,25 @@ const tabs = [
                 </h3>
               </div>
 
-              {/* Skills List */}
+              {/* Skills List (Tanpa Progress Bar) */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {group.skills.map((skill, sIdx) => (
                   <div 
                     key={sIdx} 
-                    className="p-4 bg-white/60 backdrop-blur-sm border border-white/40 rounded-2xl shadow-sm hover:shadow-md hover:bg-white transition-all duration-300"
+                    className="p-4 bg-white/60 backdrop-blur-sm border border-white/40 rounded-2xl shadow-sm hover:shadow-md hover:bg-white transition-all duration-300 flex flex-col justify-center"
                   >
-                    <div className="flex justify-between items-end mb-1">
+                    <div className="flex justify-between items-start mb-1.5">
                       <span className="font-bold text-gray-900 text-sm">
                         {skill.name}
                       </span>
-                      <span className="text-[10px] font-black text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full">
-                        {skill.level}%
+                      {/* Badge Label Level */}
+                      <span className="text-[10px] font-bold text-blue-700 bg-blue-100/80 px-2.5 py-1 rounded-md border border-blue-200">
+                        {skill.level}
                       </span>
                     </div>
-                    <p className="text-xs text-gray-500 mb-3 font-medium">
+                    <p className="text-xs text-gray-500 font-medium leading-relaxed">
                       {skill.desc}
                     </p>
-                    
-                    {/* Progress Bar Animation */}
-                    <div className="w-full bg-gray-200/80 rounded-full h-1.5 overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-                        viewport={{ once: true }}
-                        className="bg-gradient-to-r from-blue-500 to-blue-700 h-1.5 rounded-full"
-                      ></motion.div>
-                    </div>
                   </div>
                 ))}
               </div>
