@@ -184,6 +184,15 @@ const lifePathData = [
     image: imgWork1,
   },
   {
+    year: "2025 - Sekarang",
+    title: "Aktivis & MC KMBD",
+    place: "Keluarga Mahasiswa Buddhis Dhammavaddhana",
+    desc: "Menjadi Master of Ceremonies (MC) Bunga Rampai 2026 selama 4 minggu, serta aktif sebagai volunteer di berbagai event",
+    icon: <User size={20} />,
+    color: "bg-orange-100 text-orange-600",
+    image: bg13, 
+  },
+  {
     year: "2025-2026",
     title: "Freshmen Partner B29",
     place: "Universitas Bina Nusantara",
