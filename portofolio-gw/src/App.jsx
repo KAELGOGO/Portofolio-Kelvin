@@ -62,9 +62,10 @@ import project4 from "./assets/project/GistiTalkIOT.jpeg";
 
 const bgImages = [
   bg1,
+  bg15,
   bg2,
-  bg3,
   bg4,
+  bg16,
   bg17,
   bg5,
   bg6,
@@ -76,8 +77,7 @@ const bgImages = [
   bg12,
   bg13,
   bg14,
-  bg15,
-  bg16,
+  bg3,
   bg18,
   bg19
 ];
@@ -187,7 +187,7 @@ const lifePathData = [
     year: "2025 - Sekarang",
     title: "Aktivis & MC KMBD",
     place: "Keluarga Mahasiswa Buddhis Dhammavaddhana",
-    desc: "Menjadi Master of Ceremonies (MC) Bunga Rampai 2026 selama 4 minggu, serta aktif sebagai volunteer di berbagai event",
+    desc: "Menjadi Master of Ceremonies (MC) Bunga Rampai 2026 selama 4 minggu, serta aktif sebagai volunteer di berbagai event.",
     icon: <User size={20} />,
     color: "bg-orange-100 text-orange-600",
     image: bg13, 
