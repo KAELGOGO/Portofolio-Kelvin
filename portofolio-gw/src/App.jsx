@@ -957,7 +957,6 @@ export default function App() {
         </div>
 
         {/* --- MAIN CONTENT AREA --- */}
-        {/* Padding atas 24 (96px) biar gak ketutup Header, Padding bawah 24 (96px) biar gak ketutup Navigasi */}
         <main className="flex-1 relative bg-transparent p-6 pt-24 pb-24 md:p-12 md:pt-12 md:pb-12 overflow-hidden flex flex-col h-full">
           <AnimatePresence mode="wait">
             <motion.div
