@@ -36,6 +36,13 @@ import bg9 from "./assets/bg/fl moment 6.jpeg";
 import bg10 from "./assets/bg/fl moment7.jpeg";
 import bg11 from "./assets/bg/fl moment8.jpeg";
 import bg12 from "./assets/bg/fl moment9.jpeg";
+import bg13 from "./assets/bg/kmbd1.jpeg";
+import bg14 from "./assets/bg/kmbd2.jpeg";
+import bg15 from "./assets/bg/kmbd3.jpeg";
+import bg17 from "./assets/bg/mc1.jpeg";
+import bg18 from "./assets/bg/mc2.jpeg";
+import bg19 from "./assets/bg/mc3.jpeg";
+import bg20 from "./assets/bg/mc4.jpeg";
 
 import prestasi1 from "./assets/prestasi/samsung-sft2025.jpeg";
 import prestasi2 from "./assets/prestasi/Samsung-SIC25.jpeg";
@@ -66,6 +73,14 @@ const bgImages = [
   bg10,
   bg11,
   bg12,
+  bg13,
+  bg14,
+  bg15,
+  bg16,
+  bg17,
+  bg18,
+  bg19,
+  bg20
 ];
 
 // --- DATA SKILLS  ---
