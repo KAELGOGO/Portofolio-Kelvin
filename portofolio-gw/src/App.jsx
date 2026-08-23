@@ -82,8 +82,9 @@ const bgImages = [
   bg19
 ];
 
-// --- DATA SKILLS  ---
+// --- DATA SKILLS ---
 const skillsData = [
+  // 🌐 FRONTEND & WEB DEVELOPMENT
   {
     name: "HTML5",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
@@ -97,38 +98,54 @@ const skillsData = [
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
   },
   {
-    name: "React JS",
+    name: "React.js",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
   },
   {
-    name: "Tailwind",
+    name: "Tailwind CSS",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+  },
+
+  // 💻 CORE PROGRAMMING LANGUAGES
+  {
+    name: "Python",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
   },
   {
     name: "Java",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
   },
   {
-    name: "Python",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-  },
-  {
     name: "C++",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
   },
-  // --- TAMBAHAN BARU ---
   {
     name: "C",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
   },
+
+  // ⚙️ HARDWARE, IOT & ENGINEERING
   {
     name: "Arduino",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg",
   },
-  // ---------------------
+
+  // 🛠️ TOOLS & VERSION CONTROL
   {
     name: "Git",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  },
+  
+  // 🗣️ COMMUNICATION & MENTORING (Soft Skills)
+  {
+    name: "Tutoring",
+    // Menggunakan icon papan tulis/kelas yang representatif
+    icon: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/easel2.svg",
+  },
+  {
+    name: "Public Speaking & MC",
+    // Menggunakan icon mikrofon 
+    icon: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/mic.svg",
   },
 ];
 
