@@ -108,7 +108,7 @@ const groupedSkills = [
     category: "Communication & Leadership",
     icon: <User size={18} />,
     skills: [
-      { name: "Public Speaking & MC", desc: "Hosting formal/informal organizational events", level: "Advanced" },
+      { name: "Public Speaking & MC", desc: "Hosting formal/informal organizational events", level: "Proficient" },
       { name: "Tutoring & Mentoring", desc: "Academic mentoring & empathy building", level: "Advanced" },
       { name: "Adaptability", desc: "Fast learner in cross-functional environments", level: "Advanced" },
     ],
