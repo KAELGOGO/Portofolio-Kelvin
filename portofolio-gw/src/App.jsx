@@ -784,33 +784,62 @@ const tabs = [
     label: "Skills",
     icon: <Code size={20} />,
     content: (
-      <div className="h-full flex flex-col justify-center max-w-3xl mx-auto pb-24 md:pb-0">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2 text-gray-900 text-center">
-          Tech Stack
+      <div className="h-full w-full overflow-y-auto pr-2 custom-scrollbar pb-24 md:pb-0">
+        <h2 className="text-3xl font-bold mb-8 text-gray-900 pt-2">
+          Skills & Expertise
         </h2>
-        <p className="text-gray-600 mb-8 text-sm text-center">
-          Alat tempur yang saya gunakan sehari-hari.
-        </p>
-
-        {/* --- GRID LOGO SKILLS --- */}
-        <div className="grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
-          {skillsData.map((skill, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.1 }}
-              className="flex flex-col items-center justify-center p-4 bg-white/60 backdrop-blur-sm border border-white/40 rounded-2xl shadow-sm hover:shadow-lg transition-all cursor-pointer group"
+        
+        <div className="flex flex-col gap-8 pb-10 ml-1 md:ml-2">
+          {groupedSkills.map((group, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.15 }}
+              className="relative"
             >
-              <img
-                src={skill.icon}
-                alt={skill.name}
-                className="w-10 h-10 md:w-12 md:h-12 mb-2 drop-shadow-sm group-hover:drop-shadow-md transition-all"
-              />
-              <span className="text-[10px] md:text-xs font-bold text-gray-600 group-hover:text-blue-600">
-                {skill.name}
-              </span>
+              {/* Category Header */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 bg-blue-100 text-blue-700 rounded-xl shadow-sm">
+                  {group.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 tracking-tight">
+                  {group.category}
+                </h3>
+              </div>
+
+              {/* Skills List */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {group.skills.map((skill, sIdx) => (
+                  <div 
+                    key={sIdx} 
+                    className="p-4 bg-white/60 backdrop-blur-sm border border-white/40 rounded-2xl shadow-sm hover:shadow-md hover:bg-white transition-all duration-300"
+                  >
+                    <div className="flex justify-between items-end mb-1">
+                      <span className="font-bold text-gray-900 text-sm">
+                        {skill.name}
+                      </span>
+                      <span className="text-[10px] font-black text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full">
+                        {skill.level}%
+                      </span>
+                    </div>
+                    <p className="text-xs text-gray-500 mb-3 font-medium">
+                      {skill.desc}
+                    </p>
+                    
+                    {/* Progress Bar Animation */}
+                    <div className="w-full bg-gray-200/80 rounded-full h-1.5 overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
+                        transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="bg-gradient-to-r from-blue-500 to-blue-700 h-1.5 rounded-full"
+                      ></motion.div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
@@ -824,7 +853,6 @@ const tabs = [
     content: <AchievementsCarousel />,
   },
 ];
-
 export default function App() {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
   const activeContent = tabs.find((tab) => tab.id === activeTab);
