@@ -82,73 +82,45 @@ const bgImages = [
   bg19
 ];
 
-// --- DATA SKILLS ---
-const skillsData = [
-  // 🌐 FRONTEND & WEB DEVELOPMENT
+// --- DATA SKILLS (UPDATED PROFESSIONAL LOOK) ---
+const groupedSkills = [
   {
-    name: "HTML5",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    category: "Core Programming & IoT",
+    icon: <Zap size={18} />,
+    skills: [
+      { name: "Python", desc: "Data processing & AI Models (HuggingFace)", level: 85 },
+      { name: "C / C++", desc: "Algorithm structure & Logic building", level: 80 },
+      { name: "Java", desc: "Object-Oriented Programming (OOP)", level: 75 },
+      { name: "Arduino", desc: "Microcontroller & IoT integration", level: 70 },
+    ],
   },
   {
-    name: "CSS3",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    category: "Web Development",
+    icon: <Code size={18} />,
+    skills: [
+      { name: "React JS", desc: "Component-based UI development", level: 85 },
+      { name: "Tailwind CSS", desc: "Utility-first responsive styling", level: 90 },
+      { name: "HTML5 / CSS3", desc: "Fundamental web structure & design", level: 90 },
+      { name: "JavaScript", desc: "Dynamic web interaction", level: 85 },
+    ],
   },
   {
-    name: "JavaScript",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    category: "Communication & Leadership",
+    icon: <User size={18} />,
+    skills: [
+      { name: "Public Speaking & MC", desc: "Hosting formal/informal organizational events", level: 90 },
+      { name: "Tutoring & Mentoring", desc: "Academic mentoring & empathy building", level: 85 },
+      { name: "Adaptability", desc: "Fast learner in cross-functional environments", level: 95 },
+    ],
   },
   {
-    name: "React.js",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-  },
-  {
-    name: "Tailwind CSS",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-  },
-
-  // 💻 CORE PROGRAMMING LANGUAGES
-  {
-    name: "Python",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-  },
-  {
-    name: "Java",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-  },
-  {
-    name: "C++",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
-  },
-  {
-    name: "C",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
-  },
-
-  // ⚙️ HARDWARE, IOT & ENGINEERING
-  {
-    name: "Arduino",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg",
-  },
-
-  // 🛠️ TOOLS & VERSION CONTROL
-  {
-    name: "Git",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-  },
-  
-  // 🗣️ COMMUNICATION & MENTORING (Soft Skills)
-  {
-    name: "Tutoring",
-    // Menggunakan icon papan tulis/kelas yang representatif
-    icon: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/easel2.svg",
-  },
-  {
-    name: "Public Speaking & MC",
-    // Menggunakan icon mikrofon 
-    icon: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/mic.svg",
+    category: "Tools & Version Control",
+    icon: <FolderGit2 size={18} />,
+    skills: [
+      { name: "Git & GitHub", desc: "Code versioning & team collaboration", level: 80 },
+    ],
   },
 ];
-
 // --- DATA PROJECT  ---
 const projectData = [
   {
