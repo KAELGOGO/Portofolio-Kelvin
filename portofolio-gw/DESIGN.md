@@ -355,6 +355,7 @@ One family, four weights. **Plus Jakarta Sans** is friendly, slightly rounded, a
 - Use warm-tinted shadows. `rgba(31,27,22,...)`, never grey.
 - Write real numbers and real names: "3rd place, Samsung Solve For Tomorrow 2025", not "award-winning innovator".
 - Put a live link on every project that has one, and a stack chip row on every project.
+- Fill the thin galleries. Eight of the twelve entries currently carry one or two photographs where three would make the case; add real ones before adding new sections.
 - Keep the hash in sync with the active tab so `#achievements` can be pasted into a chat.
 - Keep the copy in the data files (`src/data/`) and the layout in the components.
 - Run `npm run lint` and `npm run build` before calling a change done. Both must be clean.
@@ -371,7 +372,7 @@ One family, four weights. **Plus Jakarta Sans** is friendly, slightly rounded, a
 - Don't write copy about the design instead of the person. "Honest labels, no percentages." told the reader nothing and was removed; a subtitle may only restate scope or carry a fact.
 - Don't rewrite the intro line into a job-title summary. It stays as he says it: "A human who learns and works to enjoy life."
 - Don't use percentage skill bars, and don't mix two rating scales in one list.
-- Don't let a gallery become a photo dump. Three to eight captioned photographs; thirty reads as an album, not as evidence.
+- Don't let a gallery become a photo dump. One to eight captioned photographs; thirty reads as an album, not as evidence.
 - Don't use words like passionate, ninja, guru, or rockstar. Say what you did.
 - Don't hand-roll SVG icons. The icon set is `lucide-react`, at 16-19px with the default stroke width. One family only.
 - Don't add dark mode by accident. Light only is a decision; if it ever changes, it changes here first.
