@@ -1,0 +1,153 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "canvas": "#faf8f4",
+        "surface": "#ffffff",
+        "surface-tint": "#f3eee5",
+        "line": "#e6e0d5",
+        "ink": "#1f1b16",
+        "body": "#57514a",
+        "muted": "#6e665c",
+        "primary": "#b45309",
+        "primary-hover": "#8f4208",
+        "primary-soft": "#fbead0",
+        "on-primary": "#ffffff",
+        "scrim": "#1a1512",
+        "on-photo": "#ffffff"
+      },
+      "fontFamily": {
+        "display-xl": [
+          "Plus Jakarta Sans, Inter, system-ui, sans-serif"
+        ],
+        "display-lg": [
+          "Plus Jakarta Sans, Inter, system-ui, sans-serif"
+        ],
+        "display-md": [
+          "Plus Jakarta Sans, Inter, system-ui, sans-serif"
+        ],
+        "title": [
+          "Plus Jakarta Sans, Inter, system-ui, sans-serif"
+        ],
+        "lead": [
+          "Plus Jakarta Sans, Inter, system-ui, sans-serif"
+        ],
+        "body": [
+          "Plus Jakarta Sans, Inter, system-ui, sans-serif"
+        ],
+        "body-strong": [
+          "Plus Jakarta Sans, Inter, system-ui, sans-serif"
+        ],
+        "caption": [
+          "Plus Jakarta Sans, Inter, system-ui, sans-serif"
+        ],
+        "label": [
+          "Plus Jakarta Sans, Inter, system-ui, sans-serif"
+        ],
+        "button": [
+          "Plus Jakarta Sans, Inter, system-ui, sans-serif"
+        ],
+        "micro": [
+          "Plus Jakarta Sans, Inter, system-ui, sans-serif"
+        ]
+      },
+      "fontSize": {
+        "display-xl": [
+          "72px",
+          {
+            "letterSpacing": "-2px",
+            "fontWeight": "700"
+          }
+        ],
+        "display-lg": [
+          "44px",
+          {
+            "letterSpacing": "-1.2px",
+            "fontWeight": "700"
+          }
+        ],
+        "display-md": [
+          "30px",
+          {
+            "letterSpacing": "-0.6px",
+            "fontWeight": "600"
+          }
+        ],
+        "title": [
+          "20px",
+          {
+            "letterSpacing": "-0.2px",
+            "fontWeight": "600"
+          }
+        ],
+        "lead": [
+          "20px",
+          {
+            "letterSpacing": "-0.1px",
+            "fontWeight": "400"
+          }
+        ],
+        "body": [
+          "17px",
+          {
+            "letterSpacing": "-0.1px",
+            "fontWeight": "400"
+          }
+        ],
+        "body-strong": [
+          "17px",
+          {
+            "letterSpacing": "-0.1px",
+            "fontWeight": "600"
+          }
+        ],
+        "caption": [
+          "14px",
+          {
+            "letterSpacing": "0px",
+            "fontWeight": "400"
+          }
+        ],
+        "label": [
+          "12px",
+          {
+            "letterSpacing": "0.6px",
+            "fontWeight": "600"
+          }
+        ],
+        "button": [
+          "16px",
+          {
+            "letterSpacing": "0px",
+            "fontWeight": "600"
+          }
+        ],
+        "micro": [
+          "12px",
+          {
+            "letterSpacing": "0px",
+            "fontWeight": "400"
+          }
+        ]
+      },
+      "borderRadius": {
+        "none": "0px",
+        "sm": "8px",
+        "md": "12px",
+        "lg": "18px",
+        "xl": "24px",
+        "pill": "9999px"
+      },
+      "spacing": {
+        "xxs": "4px",
+        "xs": "8px",
+        "sm": "12px",
+        "md": "16px",
+        "lg": "24px",
+        "xl": "40px",
+        "xxl": "64px",
+        "section": "96px"
+      }
+    }
+  }
+}

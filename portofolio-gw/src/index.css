@@ -1,3 +1,60 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: theme("colors.hm.canvas");
+    color: theme("colors.hm.body");
+    font-family: theme("fontFamily.jakarta");
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Keyboard users get a visible ring everywhere; mouse users do not. */
+  :focus-visible {
+    outline: 2px solid theme("colors.hm.primary");
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Panel content scrolls; the shell does not. */
+.hm-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: theme("colors.hm.line") transparent;
+}
+
+.hm-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.hm-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hm-scroll::-webkit-scrollbar-thumb {
+  background-color: theme("colors.hm.line");
+  border-radius: 9999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
