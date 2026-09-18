@@ -7,7 +7,7 @@ import { backdrop, BACKDROP_INTERVAL_MS } from "../data/backdrop";
  *
  * Two things keep this from wrecking readability, and both matter:
  *   1. The images are blurred hard and washed with the canvas colour, so they
- *      read as warm texture rather than as pictures competing for attention.
+ *      read as quiet texture rather than as pictures competing for attention.
  *   2. The shell above is opaque. Nothing that carries text is translucent.
  *
  * Only the current and previous frames are mounted, the rotation stops while the

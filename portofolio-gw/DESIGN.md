@@ -1,20 +1,20 @@
 ---
 version: alpha
 name: Kelvin Leandi - Portfolio
-description: A warm daylight portfolio. Paper-toned surfaces, soft corners and real photographs make the page feel like a person rather than a product. One amber accent marks what matters. Nothing shouts. Light mode only, on purpose.
+description: A cool daylight portfolio. Slate-toned surfaces, white cards, soft corners and real photographs make the page feel like a person rather than a product. One cobalt accent marks what matters. Nothing shouts. Light mode only, on purpose.
 colors:
-  canvas: "#FAF8F4"
+  canvas: "#F7F8FA"
   surface: "#FFFFFF"
-  surface-tint: "#F3EEE5"
-  line: "#E6E0D5"
-  ink: "#1F1B16"
-  body: "#57514A"
-  muted: "#6E665C"
-  primary: "#B45309"
-  primary-hover: "#8F4208"
-  primary-soft: "#FBEAD0"
+  surface-tint: "#EDF0F4"
+  line: "#DFE3E9"
+  ink: "#0F172A"
+  body: "#475569"
+  muted: "#5B6B7C"
+  primary: "#1D4ED8"
+  primary-hover: "#1A44B8"
+  primary-soft: "#E4EBFC"
   on-primary: "#FFFFFF"
-  scrim: "#1A1512"
+  scrim: "#0B1220"
   on-photo: "#FFFFFF"
 typography:
   display-xl:
@@ -196,15 +196,15 @@ components:
 
 This is the personal site of a Computer Science student applying for AI/ML internships. The reader is a recruiter or an engineer who gives a link under ten seconds. The site has to make the strongest proof visible fast, and it has to make him look like someone pleasant to work with.
 
-The direction is **warm daylight**. Paper-toned backgrounds (`{colors.canvas}`), white cards, soft corners, and real photographs shown bright and clean. There is no dark mode, no glass, no glow. The page should read the way a friendly, organised person would hand you their work: plainly, with the good stuff on top.
+The direction is **cool daylight**. Paper-toned backgrounds (`{colors.canvas}`), white cards, soft corners, and real photographs shown bright and clean. There is no dark mode, no glass, no glow. The page should read the way a friendly, organised person would hand you their work: plainly, with the good stuff on top.
 
 The tone matters as much as the palette. This is a student. **Confident, not boastful.** Facts stated plainly beat adjectives. "3rd place, Samsung Solve For Tomorrow 2025" is stronger than "passionate award-winning innovator", and it is the kind of line a humble person can say out loud without flinching.
 
 **Key characteristics**
 
-- **Warm paper, not stark white.** `{colors.canvas}` is a warm off-white; pure white is reserved for cards so they lift off the page.
-- **One accent, warm.** Amber (`{colors.primary}`) marks the action, the active tab, and the emphasis half of a headline. Nothing else is coloured.
-- **Soft corners, soft shadows.** `{rounded.md}` to `{rounded.xl}`, and warm-tinted shadows rather than grey ones. Hard edges and black shadows read corporate.
+- **Cool paper, not stark white.** `{colors.canvas}` is a cool off-white; pure white is reserved for cards so they lift off the page.
+- **One accent, cool.** Cobalt (`{colors.primary}`) marks the action, the active tab, and the emphasis half of a headline. Nothing else is coloured.
+- **Soft corners, soft shadows.** `{rounded.md}` to `{rounded.xl}`, and shadows tinted to the ink rather than plain black. Hard edges and black shadows read corporate.
 - **Content photographs are shown, not styled.** Bright, natural, `{rounded.lg}`, with a caption. The one exception is `{component.ambient-backdrop}`, which is blurred so hard it becomes texture.
 - **The shell is a tab editor.** Five tabs (Bio, Journey, Projects, Skills, Achievements) in a persistent rail, each deep-linkable by hash.
 - **Evidence lives in a gallery.** Every project, journey entry and award opens `{component.gallery-modal}` with its photographs, title, one-line description and date.
@@ -213,18 +213,18 @@ The tone matters as much as the palette. This is a student. **Confident, not boa
 
 ## Colors
 
-- **Canvas** (`{colors.canvas}` - #FAF8F4): Warm paper. The page background everywhere.
+- **Canvas** (`{colors.canvas}` - #F7F8FA): Cool paper. The page background everywhere.
 - **Surface** (`{colors.surface}` - #FFFFFF): Cards, the gallery panel, the active tab. Pure white so cards read as raised without needing a heavy border.
-- **Surface Tint** (`{colors.surface-tint}` - #F3EEE5): The soft sand used for the rail, skill rows and chips. Warmer and quieter than the canvas.
-- **Line** (`{colors.line}` - #E6E0D5): The single border tone. 1px, on cards and chips.
-- **Ink** (`{colors.ink}` - #1F1B16): Headings and primary labels. A warm near-black, never `#000`.
-- **Body** (`{colors.body}` - #57514A): Paragraphs, descriptions, tab labels. 7.4:1 on canvas, comfortable at 17px.
-- **Muted** (`{colors.muted}` - #6E665C): Captions, timestamps, photo counts. 5.3:1 on canvas, above WCAG AA.
-- **Primary** (`{colors.primary}` - #B45309): The single accent. The CV button, links, the active tab, the emphasis phrase in a headline. 4.7:1 on canvas, so it is safe as link text at body size.
-- **Primary Hover** (`{colors.primary-hover}` - #8F4208): One step deeper for hover, and the text tone inside a `{component.badge-soft}`.
-- **Primary Soft** (`{colors.primary-soft}` - #FBEAD0): The warm tint behind the quiet amber moments (gallery close control hover, and the one `{component.badge-soft}` per panel). Never used as a section background.
-- **On Primary** (`{colors.on-primary}` - #FFFFFF): Text on amber fills. 5.0:1, passes AA.
-- **Scrim** (`{colors.scrim}` - #1A1512): The warm dark used only inside `{component.gallery-overlay}`.
+- **Surface Tint** (`{colors.surface-tint}` - #EDF0F4): The pale slate used for the rail, skill rows and chips. A touch cooler and quieter than the canvas.
+- **Line** (`{colors.line}` - #DFE3E9): The single border tone. 1px, on cards and chips.
+- **Ink** (`{colors.ink}` - #0F172A): Headings and primary labels. A cool near-black (slate), never `#000`.
+- **Body** (`{colors.body}` - #475569): Paragraphs, descriptions, tab labels. 7.4:1 on canvas, comfortable at 17px.
+- **Muted** (`{colors.muted}` - #5B6B7C): Captions, timestamps, photo counts. 5.3:1 on canvas, above WCAG AA.
+- **Primary** (`{colors.primary}` - #1D4ED8): The single accent. The CV button, links, the active tab, the emphasis phrase in a headline. 4.7:1 on canvas, so it is safe as link text at body size.
+- **Primary Hover** (`{colors.primary-hover}` - #1A44B8): One step deeper for hover, and the text tone inside a `{component.badge-soft}`.
+- **Primary Soft** (`{colors.primary-soft}` - #E4EBFC): The cool tint behind the quiet cobalt moments (gallery close control hover, and the one `{component.badge-soft}` per panel). Never used as a section background.
+- **On Primary** (`{colors.on-primary}` - #FFFFFF): Text on cobalt fills. 5.0:1, passes AA.
+- **Scrim** (`{colors.scrim}` - #0B1220): The deep slate used only inside `{component.gallery-overlay}`.
 - **On Photo** (`{colors.on-photo}` - #FFFFFF): Text on a photographic scrim.
 
 ## Typography
@@ -247,7 +247,7 @@ One family, four weights. **Plus Jakarta Sans** is friendly, slightly rounded, a
 
 - Body is 17px. It stays 17px on mobile; do not shrink it to fit.
 - Weight 700 is for headlines only. Body emphasis uses 600. There is no 800 or 900 in this system.
-- Line height on body is generous (1.65). Tight leading plus a warm background starts to feel cramped.
+- Line height on body is generous (1.65). Tight leading plus a paper-toned background starts to feel cramped.
 - Sentence case for headlines. All-caps is limited to `{typography.label}` and `{typography.micro}` labels, and no more than one per panel.
 - These nine tokens are the whole scale (they are defined in `tailwind.config.js`). If a size is needed that is not here, the system changes first and the code follows.
 
@@ -267,10 +267,10 @@ One family, four weights. **Plus Jakarta Sans** is friendly, slightly rounded, a
 | Level | Treatment | Use |
 |---|---|---|
 | Flat | no shadow, 1px `{colors.line}` | cards and rows at rest, skill rows, chips |
-| Lift | `0 1px 2px rgba(31,27,22,0.04)`, `0 6px 16px rgba(31,27,22,0.06)` | card, row and doc-item hover, the active tab |
-| Float | `0 2px 6px rgba(31,27,22,0.06)`, `0 20px 48px rgba(31,27,22,0.12)` | gallery panel, music dock |
+| Lift | `0 1px 2px rgba(15,23,42,0.04)`, `0 6px 16px rgba(15,23,42,0.06)` | card, row and doc-item hover, the active tab |
+| Float | `0 2px 6px rgba(15,23,42,0.06)`, `0 20px 48px rgba(15,23,42,0.12)` | gallery panel, music dock |
 
-**Shadow philosophy.** Shadows are **warm-tinted** (`rgba(31,27,22,...)`), never neutral grey or black; a grey shadow on a warm page reads as dirt. Depth is mostly carried by the surface change (canvas to white) and the 1px line. Shadow is reserved for hover and for the two genuinely floating elements: the gallery panel and the music dock.
+**Shadow philosophy.** Shadows are tinted to the ink (`rgba(15,23,42,...)`), never plain black: a black shadow on a cool page reads as dirt. Depth is mostly carried by the surface change (canvas to white) and the 1px line. Shadow is reserved for hover and for the two genuinely floating elements: the gallery panel and the music dock.
 
 ## Shapes
 
@@ -305,17 +305,17 @@ One family, four weights. **Plus Jakarta Sans** is friendly, slightly rounded, a
 **`ambient-backdrop`** - the rotating photograph behind the whole shell, and the only piece of continuous motion on the site. Sixteen photographs, crossfading every 5 seconds.
 
 - Full viewport, `position: fixed`, `z-index: 0`, never scrolls, `aria-hidden`, `pointer-events-none`.
-- Treatment: `blur(18px) saturate(0.9)`, then a `{colors.canvas}` wash at 55%. Blurred this hard it reads as warm texture rather than as a picture competing for attention, which is the entire point.
+- Treatment: `blur(18px) saturate(0.9)`, then a `{colors.canvas}` wash at 55%. Blurred this hard it reads as quiet texture rather than as a picture competing for attention, which is the entire point.
 - **Serve a downscaled copy.** `src/assets/backdrop/` holds 640px copies; at this blur radius they are indistinguishable from the originals at a fraction of the weight. Keep new entries at 640px wide.
 - Only the current frame and the outgoing one are mounted. There is no preload-ahead: the next photograph is fetched when the crossfade starts, and the frame fades in on its own `onLoad`.
 - Pauses on `visibilitychange`; never starts under `prefers-reduced-motion`.
 - The shell sits above it at 100% opacity. See Elevation & Depth: no glass.
 
-**`sidebar-rail` / `tab-bar`** - the shell's navigation. Desktop: a 240px rail on `{colors.surface-tint}` with a 1px line on its right edge; wordmark at the top, five `{component.tab-item}` buttons in the middle, social icons and the music dock pinned to the bottom. Mobile: a 56px top bar with the wordmark and socials, plus a fixed bottom bar with the same five tabs at icon plus label, padded for `env(safe-area-inset-bottom)`. Active tab is `{component.tab-item-active}`: white fill, amber label, subtle lift, `aria-current="page"`. Panel switches crossfade in 400ms. The wordmark is plain text: `KELVIN.` No dot, no badge.
+**`sidebar-rail` / `tab-bar`** - the shell's navigation. Desktop: a 240px rail on `{colors.surface-tint}` with a 1px line on its right edge; wordmark at the top, five `{component.tab-item}` buttons in the middle, social icons and the music dock pinned to the bottom. Mobile: a 56px top bar with the wordmark and socials, plus a fixed bottom bar with the same five tabs at icon plus label, padded for `env(safe-area-inset-bottom)`. Active tab is `{component.tab-item-active}`: white fill, cobalt label, subtle lift, `aria-current="page"`. Panel switches crossfade in 400ms. The wordmark is plain text: `KELVIN.` No dot, no badge.
 
-**`button-primary`** - the only high-emphasis action in a viewport. Amber fill, white label, pill radius. On this site that is Download CV, and nothing else. Hover steps to `{component.button-primary-hover}`.
+**`button-primary`** - the only high-emphasis action in a viewport. Cobalt fill, white label, pill radius. On this site that is Download CV, and nothing else. Hover steps to `{component.button-primary-hover}`.
 
-**`text-link`** - amber, underlined on hover, using `{component.text-link-hover}` for the hover tone. Used for LinkedIn, GitHub, project live links and the music credit.
+**`text-link`** - cobalt, underlined on hover, using `{component.text-link-hover}` for the hover tone. Used for LinkedIn, GitHub, project live links and the music credit.
 
 **`doc-item`** - the clickable documentation entry, used for projects and the secondary achievements. White fill, `{rounded.lg}`, 1px line, a treated image at the top, title at `{typography.title}`, one line at `{typography.caption}`, optional `{component.tag-chip}` stack labels, and a photo-count indicator ("4 photos") in `{colors.muted}`. Hover lifts it 2px with the lift shadow and brightens the indicator to `{colors.primary}`. **The whole card is one button**, never a card containing a small separate link. Focus ring: 2px `{colors.primary}` outline at 2px offset.
 
@@ -326,15 +326,15 @@ One family, four weights. **Plus Jakarta Sans** is friendly, slightly rounded, a
 - **Overlay:** `{component.gallery-overlay}` at 55% opacity with `backdrop-filter: blur(6px)`. Light enough that the reader keeps their place in the tab behind it.
 - **Panel:** `{component.gallery-panel}`, centred, max-width 1040px, max-height 88vh, 32px padding, `{rounded.xl}`, float shadow. White, because the photographs are the only colourful thing in it.
 - **Header:** date or event at `{typography.label}` in `{colors.primary}`, title at `{typography.display-md}`, one line of description at `{typography.body}` in `{colors.body}`, close control pinned top-right.
-- **Body:** one hero photograph at 16:9, then a three-column grid of all photographs, each `{rounded.md}`. Selecting a thumbnail promotes it to hero and marks it with a 2px amber border. The hero caption sits under the image at `{typography.micro}`.
+- **Body:** one hero photograph at 16:9, then a three-column grid of all photographs, each `{rounded.md}`. Selecting a thumbnail promotes it to hero and marks it with a 2px cobalt border. The hero caption sits under the image at `{typography.micro}`.
 - **Entry:** 400ms fade plus a 16px rise on `motion.enter`. Exit is a 200ms fade with no movement.
 - **Behaviour:** `Esc` closes. Clicking the overlay closes; clicking the panel does not. `Left` and `Right` move between photographs. Focus is trapped in the panel while open and returns to the triggering element on close. Body scroll is locked while open.
 - **Mobile:** a full-screen sheet (`h-full w-full`, no radius) with the same close control, the same thumbnail grid, and no swipe gesture. Nothing is hidden behind a gesture the reader cannot see.
 - **No helper text anywhere in here.** A control is either found, or it is the wrong control.
 
-**`badge-soft`** - the amber-tinted label used for a single quiet highlight per panel. `{colors.primary-soft}` fill, `{colors.primary-hover}` text. Never more than one per panel. (On the shipped tabs the amber moment is carried by the active tab and the CV button; the tint itself is used behind the gallery close control on hover.)
+**`badge-soft`** - the cobalt-tinted label used for a single quiet highlight per panel. `{colors.primary-soft}` fill, `{colors.primary-hover}` text. Never more than one per panel. (On the shipped tabs the cobalt moment is carried by the active tab and the CV button; the tint itself is used behind the gallery close control on hover.)
 
-**`tag-chip`** - surface-tint fill, `{rounded.pill}`, `{typography.micro}` in `{colors.body}`. For a project's stack, rendered from `tech` in `src/data/projects.js`. Not amber; amber is for action and proof.
+**`tag-chip`** - surface-tint fill, `{rounded.pill}`, `{typography.micro}` in `{colors.body}`. For a project's stack, rendered from `tech` in `src/data/projects.js`. Not cobalt; cobalt is for action and proof.
 
 **`skill-row`** - surface-tint fill at `{rounded.md}`, skill name at `{typography.title}` on the left, level label at `{typography.caption}` in `{colors.body}` on the right, description below at `{typography.micro}`. Grouped under a `{typography.label}` heading. **No progress bars, no percentages.** The whole app uses one ordered scale: Familiar, Intermediate, Proficient, Advanced.
 
@@ -351,11 +351,11 @@ One family, four weights. **Plus Jakarta Sans** is friendly, slightly rounded, a
 - Write like you would talk to the person reading it. Plain sentences, no superlatives.
 - Lead with proof on the Bio tab. GestiTalk and the Samsung placement must be reachable without leaving the first tab.
 - Show photographs bright and natural. The work is the interesting part, not the filter.
-- Keep one amber action per viewport.
-- Use warm-tinted shadows. `rgba(31,27,22,...)`, never grey.
+- Keep one cobalt action per viewport.
+- Tint shadows to the ink. `rgba(15,23,42,...)`, never plain black.
 - Write real numbers and real names: "3rd place, Samsung Solve For Tomorrow 2025", not "award-winning innovator".
 - Put a live link on every project that has one, and a stack chip row on every project.
-- Fill the thin galleries. Eight of the twelve entries currently carry one or two photographs where three would make the case; add real ones before adding new sections.
+- Fill the thin galleries. Several entries still carry one or two photographs where three would make the case.
 - Keep the hash in sync with the active tab so `#achievements` can be pasted into a chat.
 - Keep the copy in the data files (`src/data/`) and the layout in the components.
 - Run `npm run lint` and `npm run build` before calling a change done. Both must be clean.
@@ -365,7 +365,7 @@ One family, four weights. **Plus Jakarta Sans** is friendly, slightly rounded, a
 - Don't bring back the blue-to-indigo gradients, the blurred colour blobs behind the portrait, or the white glass panels. That combination is the visual signature of a generated page.
 - Don't let the shell go translucent. The rail and the panel stay at 100% opacity above the ambient backdrop; a glass card floating on a rotating photograph is exactly what made the previous version tiring to read.
 - Don't let the backdrop become legible. If you can tell what is happening in the photograph behind the shell, the blur or the wash is too weak.
-- Don't use pure black text or grey shadows. Both look wrong on warm paper.
+- Don't use pure black text or plain grey shadows. Both look wrong on this paper tone.
 - Don't hide proof behind a second click when it can sit on the surface.
 - Don't use em-dashes or en-dashes in visible copy. Date ranges are written as "Since 2024" or "2021-2024".
 - Don't write copy that explains the interface. No "Esc to close", no "click to view", no "swipe to see more". A control is either found, or it is the wrong control.
