@@ -1,25 +1,10 @@
-import { Code, FolderGit2, Github, History, Instagram, Linkedin, Trophy, User } from "lucide-react";
 import MusicDock from "./MusicDock";
 import { profile } from "../data/profile";
-
-export const TABS = [
-  { id: "bio", label: "Bio", Icon: User },
-  { id: "journey", label: "Journey", Icon: History },
-  { id: "projects", label: "Projects", Icon: FolderGit2 },
-  { id: "skills", label: "Skills", Icon: Code },
-  { id: "achievements", label: "Achievements", Icon: Trophy },
-];
-
-const SOCIAL_ICONS = {
-  instagram: Instagram,
-  linkedin: Linkedin,
-  github: Github,
-};
+import { SOCIAL_ICONS, TABS } from "../data/tabs";
 
 function Wordmark() {
   return (
-    <span className="flex items-center gap-2 font-jakarta text-[19px] font-bold tracking-[-0.3px] text-hm-ink">
-      <span className="h-2 w-2 rounded-full bg-hm-primary" />
+    <span className="font-jakarta text-[19px] font-bold tracking-[-0.3px] text-hm-ink">
       KELVIN.
     </span>
   );

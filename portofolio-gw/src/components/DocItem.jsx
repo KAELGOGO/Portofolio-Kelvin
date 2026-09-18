@@ -9,6 +9,7 @@ export default function DocItem({
   meta,
   title,
   line,
+  tags = [],
   photoCount = 0,
   onOpen,
   className = "",
@@ -40,6 +41,19 @@ export default function DocItem({
 
         {line ? (
           <span className="mt-1 block text-caption text-hm-body">{line}</span>
+        ) : null}
+
+        {tags.length ? (
+          <span className="mt-3 flex flex-wrap gap-1.5">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full bg-hm-tint px-2.5 py-1 text-micro text-hm-body"
+              >
+                {tag}
+              </span>
+            ))}
+          </span>
         ) : null}
 
         {photoCount > 0 ? (

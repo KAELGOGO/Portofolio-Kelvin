@@ -2,15 +2,19 @@ import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import AmbientBackdrop from "./components/AmbientBackdrop";
 import GalleryModal from "./components/GalleryModal";
-import TabRail, { TABS } from "./components/TabRail";
+import TabRail from "./components/TabRail";
 import AchievementsPanel from "./components/panels/AchievementsPanel";
 import BioPanel from "./components/panels/BioPanel";
 import JourneyPanel from "./components/panels/JourneyPanel";
 import ProjectsPanel from "./components/panels/ProjectsPanel";
 import SkillsPanel from "./components/panels/SkillsPanel";
 import { achievements } from "./data/achievements";
+import { TABS } from "./data/tabs";
 import { journey } from "./data/journey";
 import { projects } from "./data/projects";
+
+// eslint core does not count `<motion.div>` as a use of `motion`.
+const MotionDiv = motion.div;
 
 const TAB_IDS = TABS.map((tab) => tab.id);
 const DEFAULT_TAB = "bio";
@@ -89,18 +93,18 @@ export default function App() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="relative min-h-screen bg-hm-canvas lg:p-5">
+      <div className="relative min-h-[100dvh] bg-hm-canvas lg:p-5">
         <AmbientBackdrop />
 
         {/* The shell. Opaque on purpose: the backdrop must never sit under text. */}
-        <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-[1440px] flex-col overflow-hidden bg-hm-canvas lg:h-[calc(100vh-2.5rem)] lg:min-h-0 lg:flex-row lg:rounded-[24px] lg:border lg:border-hm-line lg:shadow-lift">
+        <div className="relative z-10 mx-auto flex min-h-[100dvh] w-full max-w-[1440px] flex-col overflow-hidden bg-hm-canvas lg:h-[calc(100dvh-2.5rem)] lg:min-h-0 lg:flex-row lg:rounded-[24px] lg:border lg:border-hm-line lg:shadow-lift">
           <TabRail active={tab} onChange={goToTab} />
 
           <main className="relative flex-1 overflow-hidden pt-14 lg:pt-0">
             <div className="hm-scroll h-full overflow-y-auto px-5 py-8 pb-28 sm:px-8 lg:px-14 lg:py-14 lg:pb-14">
               <div className="mx-auto w-full max-w-[1080px]">
                 <AnimatePresence mode="wait" initial={false}>
-                  <motion.div
+                  <MotionDiv
                     key={tab}
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -108,7 +112,7 @@ export default function App() {
                     transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   >
                     {panel}
-                  </motion.div>
+                  </MotionDiv>
                 </AnimatePresence>
               </div>
             </div>
@@ -116,6 +120,7 @@ export default function App() {
         </div>
 
         <GalleryModal
+          key={openGalleryId ?? "closed"}
           item={openGalleryId ? galleries[openGalleryId] : null}
           onClose={closeGallery}
         />

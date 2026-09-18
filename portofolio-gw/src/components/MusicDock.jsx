@@ -20,54 +20,58 @@ function formatTime(seconds) {
 export default function MusicDock() {
   const audioRef = useRef(null);
   const [playing, setPlaying] = useState(false);
-  const [progress, setProgress] = useState(0);
   const [current, setCurrent] = useState(0);
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(0.7);
 
+  // The player state follows the audio element, so the button can never claim
+  // to be playing something that is silent.
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return undefined;
 
-    const onTime = () => {
-      setCurrent(audio.currentTime);
-      if (audio.duration) setProgress((audio.currentTime / audio.duration) * 100);
-    };
+    const onTime = () => setCurrent(audio.currentTime);
     const onLoaded = () => setDuration(audio.duration);
-    const onEnded = () => {
-      setPlaying(false);
-      setProgress(0);
-    };
+    const onPlay = () => setPlaying(true);
+    const onStop = () => setPlaying(false);
 
     audio.addEventListener("timeupdate", onTime);
     audio.addEventListener("loadedmetadata", onLoaded);
-    audio.addEventListener("ended", onEnded);
-    audio.volume = volume;
+    audio.addEventListener("play", onPlay);
+    audio.addEventListener("pause", onStop);
+    audio.addEventListener("ended", onStop);
+    audio.addEventListener("error", onStop);
 
     return () => {
       audio.removeEventListener("timeupdate", onTime);
       audio.removeEventListener("loadedmetadata", onLoaded);
-      audio.removeEventListener("ended", onEnded);
+      audio.removeEventListener("play", onPlay);
+      audio.removeEventListener("pause", onStop);
+      audio.removeEventListener("ended", onStop);
+      audio.removeEventListener("error", onStop);
     };
+  }, []);
+
+  useEffect(() => {
+    if (audioRef.current) audioRef.current.volume = volume;
   }, [volume]);
 
   const toggle = () => {
     const audio = audioRef.current;
     if (!audio) return;
-    if (playing) audio.pause();
-    else void audio.play();
-    setPlaying(!playing);
+    if (audio.paused) audio.play().catch(() => setPlaying(false));
+    else audio.pause();
   };
 
-  const seek = (event) => {
+  const seek = (value) => {
     const audio = audioRef.current;
-    if (!audio || !audio.duration) return;
-    const rect = event.currentTarget.getBoundingClientRect();
-    audio.currentTime = ((event.clientX - rect.left) / rect.width) * audio.duration;
+    if (!audio) return;
+    audio.currentTime = value;
+    setCurrent(value);
   };
 
   return (
-    <div className="rounded-[20px] border border-hm-line bg-hm-surface p-4 shadow-float">
+    <div className="rounded-[18px] border border-hm-line bg-hm-surface p-4 shadow-float">
       <audio ref={audioRef} src={track} preload="none" />
 
       <div className="flex items-center gap-3">
@@ -93,16 +97,16 @@ export default function MusicDock() {
         </div>
       </div>
 
-      <div
-        role="presentation"
-        onClick={seek}
-        className="mt-3 h-1 w-full cursor-pointer rounded-full bg-hm-tint"
-      >
-        <div
-          className="h-1 rounded-full bg-hm-primary transition-[width] duration-200"
-          style={{ width: `${progress}%` }}
-        />
-      </div>
+      <input
+        type="range"
+        min="0"
+        max={duration || 0}
+        step="1"
+        value={current}
+        aria-label="Progress"
+        onChange={(event) => seek(Number(event.target.value))}
+        className="mt-3 h-1 w-full cursor-pointer accent-hm-primary"
+      />
 
       <div className="mt-1 flex justify-between text-[10px] tabular-nums text-hm-muted">
         <span>{formatTime(current)}</span>

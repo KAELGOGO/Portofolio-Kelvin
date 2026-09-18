@@ -19,7 +19,7 @@ import sma from "../assets/LifePath/sma.jpeg";
 export const journey = [
   {
     id: "helpmate",
-    year: "2025 – now",
+    year: "Since 2025",
     title: "Part-time tutor",
     place: "HelpMate Bimbel",
     description:
@@ -31,7 +31,7 @@ export const journey = [
   },
   {
     id: "kmbd",
-    year: "2025 – now",
+    year: "Since 2025",
     title: "Volunteer and master of ceremonies",
     place: "KMBD Dhammavaddhana, BINUS",
     description:
@@ -49,7 +49,7 @@ export const journey = [
   },
   {
     id: "freshmen-partner",
-    year: "2025 – 2026",
+    year: "2025-2026",
     title: "Freshmen Partner B29",
     place: "Bina Nusantara University",
     description:
@@ -78,7 +78,7 @@ export const journey = [
   },
   {
     id: "university",
-    year: "2024 – now",
+    year: "Since 2024",
     title: "Computer Science",
     place: "Bina Nusantara University",
     description:
@@ -90,7 +90,7 @@ export const journey = [
   },
   {
     id: "school",
-    year: "2021 – 2024",
+    year: "2021-2024",
     title: "Vocational high school",
     place: "SMK Negeri 1 Manggar, Belitung Timur",
     description:

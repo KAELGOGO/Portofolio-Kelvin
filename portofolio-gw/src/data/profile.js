@@ -6,7 +6,11 @@ export const profile = {
   photo: profilePhoto,
   // His own sentence. Do not rewrite it into a job-title summary.
   intro: "A human who learns and works to enjoy life.",
-  facts: ["Indonesia", "AI & Computer Vision", "Open to internship"],
+  facts: [
+    { label: "Indonesia" },
+    { label: "AI & Computer Vision" },
+    { label: "Open to internship", emphasis: true },
+  ],
   cv: "/Kelvin-Leandi-CV.pdf",
   cvFileName: "Kelvin Leandi CV.pdf",
   email: "kelvinleandi5@gmail.com",
@@ -18,8 +22,8 @@ export const profile = {
 };
 
 /**
- * The three cards on the Bio tab. Each one jumps to the tab that owns the
- * detail, and opens the matching gallery when one exists.
+ * The three rows on the Bio tab. Each one jumps to the tab that owns the
+ * detail, and evidence lives there.
  */
 export const highlights = [
   {
@@ -28,7 +32,6 @@ export const highlights = [
     title: "GestiTalk",
     line: "Reads Indonesian sign language through a phone camera, in real time.",
     goTo: "projects",
-    gallery: "gestitalk",
   },
   {
     id: "samsung",
@@ -36,7 +39,6 @@ export const highlights = [
     title: "3rd place, Samsung Solve For Tomorrow 2025",
     line: "The award that came out of GestiTalk.",
     goTo: "achievements",
-    gallery: "samsung-sft",
   },
   {
     id: "tutor",
@@ -44,6 +46,5 @@ export const highlights = [
     title: "Part-time tutor at HelpMate Bimbel",
     line: "Maths and science for junior high students, every week.",
     goTo: "journey",
-    gallery: "helpmate",
   },
 ];

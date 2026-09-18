@@ -1,5 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+
+const MotionDiv = motion.div;
 
 /**
  * The documentation popup, opened by any DocItem.
@@ -29,10 +32,6 @@ export default function GalleryModal({ item, onClose }) {
     },
     [photos.length],
   );
-
-  useEffect(() => {
-    setIndex(0);
-  }, [item?.id]);
 
   useEffect(() => {
     if (!open) return undefined;
@@ -99,7 +98,7 @@ export default function GalleryModal({ item, onClose }) {
   return (
     <AnimatePresence>
       {open ? (
-        <motion.div
+        <MotionDiv
           key="gallery-overlay"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -110,7 +109,7 @@ export default function GalleryModal({ item, onClose }) {
           }}
           className="fixed inset-0 z-50 grid place-items-center bg-hm-scrim/55 p-0 backdrop-blur-[6px] sm:p-6"
         >
-          <motion.div
+          <MotionDiv
             key="gallery-panel"
             ref={panelRef}
             role="dialog"
@@ -142,14 +141,7 @@ export default function GalleryModal({ item, onClose }) {
                 aria-label="Close"
                 className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-hm-line bg-hm-tint text-hm-ink transition-colors hover:bg-hm-soft"
               >
-                <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-                  <path
-                    d="M1 1l12 12M13 1L1 13"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                  />
-                </svg>
+                <X size={16} />
               </button>
             </div>
 
@@ -172,16 +164,7 @@ export default function GalleryModal({ item, onClose }) {
                         aria-label="Previous photo"
                         className="absolute left-3 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-hm-surface/90 text-hm-ink shadow-lift transition hover:bg-hm-surface"
                       >
-                        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-                          <path
-                            d="M10 2L4 8l6 6"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
+                        <ChevronLeft size={18} />
                       </button>
                       <button
                         type="button"
@@ -189,16 +172,7 @@ export default function GalleryModal({ item, onClose }) {
                         aria-label="Next photo"
                         className="absolute right-3 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-hm-surface/90 text-hm-ink shadow-lift transition hover:bg-hm-surface"
                       >
-                        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-                          <path
-                            d="M6 2l6 6-6 6"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
+                        <ChevronRight size={18} />
                       </button>
                     </>
                   ) : null}
@@ -236,8 +210,8 @@ export default function GalleryModal({ item, onClose }) {
                 ) : null}
               </div>
             ) : null}
-          </motion.div>
-        </motion.div>
+          </MotionDiv>
+        </MotionDiv>
       ) : null}
     </AnimatePresence>
   );

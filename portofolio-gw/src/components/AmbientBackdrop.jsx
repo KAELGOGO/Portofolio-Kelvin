@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useReducedMotion } from "framer-motion";
 import { backdrop, BACKDROP_INTERVAL_MS } from "../data/backdrop";
 
 /**
@@ -9,24 +10,24 @@ import { backdrop, BACKDROP_INTERVAL_MS } from "../data/backdrop";
  *      read as warm texture rather than as pictures competing for attention.
  *   2. The shell above is opaque. Nothing that carries text is translucent.
  *
- * Only the current and previous frames are mounted, and the rotation stops
- * while the document is hidden.
+ * Only the current and previous frames are mounted, the rotation stops while the
+ * document is hidden, and under `prefers-reduced-motion` it never starts.
  */
 export default function AmbientBackdrop() {
+  const reduceMotion = useReducedMotion();
   const [index, setIndex] = useState(0);
   const [prev, setPrev] = useState(null);
-  const [loaded, setLoaded] = useState(false);
-  const [paused, setPaused] = useState(false);
+  const [loadedIndex, setLoadedIndex] = useState(-1);
+  const [paused, setPaused] = useState(() => document.hidden);
 
   useEffect(() => {
     const onVisibility = () => setPaused(document.hidden);
-    onVisibility();
     document.addEventListener("visibilitychange", onVisibility);
     return () => document.removeEventListener("visibilitychange", onVisibility);
   }, []);
 
   useEffect(() => {
-    if (paused || backdrop.length < 2) return undefined;
+    if (reduceMotion || paused || backdrop.length < 2) return undefined;
     const id = window.setInterval(() => {
       setIndex((i) => {
         setPrev(i);
@@ -34,10 +35,9 @@ export default function AmbientBackdrop() {
       });
     }, BACKDROP_INTERVAL_MS);
     return () => window.clearInterval(id);
-  }, [paused]);
+  }, [paused, reduceMotion]);
 
   useEffect(() => {
-    setLoaded(false);
     // Drop the outgoing frame once the crossfade has finished.
     const id = window.setTimeout(() => setPrev(null), 1400);
     return () => window.clearTimeout(id);
@@ -61,9 +61,9 @@ export default function AmbientBackdrop() {
       <img
         src={backdrop[index]}
         alt=""
-        onLoad={() => setLoaded(true)}
+        onLoad={() => setLoadedIndex(index)}
         className={`absolute inset-0 h-full w-full scale-110 object-cover blur-[18px] saturate-[0.9] transition-opacity duration-[1200ms] ease-in-out ${
-          loaded ? "opacity-100" : "opacity-0"
+          loadedIndex === index ? "opacity-100" : "opacity-0"
         }`}
       />
 

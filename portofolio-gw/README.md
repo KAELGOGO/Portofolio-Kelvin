@@ -1,16 +1,31 @@
-# React + Vite
+# Kelvin Leandi - portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal site: a single-page React app with five tabs (Bio, Journey, Projects, Skills,
+Achievements), a photo gallery per entry, and a written design system.
 
-Currently, two official plugins are available:
+Live: https://kelvin-leandi.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Run it
 
-## React Compiler
+```bash
+npm install
+npm run dev      # vite dev server
+npm run lint     # eslint, must stay clean
+npm run build    # production build into dist/
+npm run preview  # serve the built output
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Layout
 
-## Expanding the ESLint configuration
+- `src/App.jsx` - the shell: tab routing by hash, gallery state, backdrop.
+- `src/components/` - the shell pieces (rail, backdrop, gallery modal, music dock) and
+  `panels/`, one file per tab.
+- `src/data/` - all copy and content. Text edits happen here, not in the components.
+- `src/assets/` - photographs. `assets/backdrop/` holds the downscaled copies used
+  behind the shell; keep new entries there at 640px wide.
+- `DESIGN.md` - the design system: tokens, component specs, and the copy rules.
+  Change the system there first, then the code.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Deploy
+
+Vercel, root directory `portofolio-gw`, default Vite build. Pushing to `main` deploys.

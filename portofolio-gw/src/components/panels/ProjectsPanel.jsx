@@ -20,6 +20,7 @@ export default function ProjectsPanel({ onOpenGallery }) {
               meta={`${project.category} · ${project.year}`}
               title={project.title}
               line={project.description}
+              tags={project.tech}
               photoCount={project.gallery.length}
               onOpen={() => onOpenGallery(project.id)}
               className="flex-1"

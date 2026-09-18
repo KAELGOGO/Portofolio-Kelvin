@@ -54,7 +54,7 @@ export const projects = [
     id: "portfolio",
     title: "This portfolio",
     category: "Web",
-    year: "2024 – now",
+    year: "Since 2024",
     description:
       "The site you are reading. React and Tailwind, built from a written design system so it stays consistent as it grows.",
     tech: ["React", "Tailwind", "Vite", "Vercel"],

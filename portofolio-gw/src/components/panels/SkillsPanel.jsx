@@ -6,10 +6,6 @@ export default function SkillsPanel() {
       <h2 className="text-[32px] font-bold leading-[1.1] tracking-[-1px] text-hm-ink sm:text-display-lg">
         Skills
       </h2>
-      <p className="mt-3 max-w-[56ch] text-body text-hm-body">
-        Honest labels, no percentages.
-      </p>
-
       <div className="mt-9 space-y-9">
         {skillGroups.map((group) => (
           <section key={group.id}>
